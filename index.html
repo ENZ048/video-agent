@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/dashboard-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TROIKA TECH - AI Avatar Demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <!-- Header with Logo -->
+        <div class="header">
+          <div class="logo">
+            <img src="/dashboard-logo.png" alt="TROIKA TECH Logo" class="header-logo">
+            <div class="logo-text">TROIKA TECH</div>
+          </div>
+          <div class="subtitle">AI Avatar Streaming Demo</div>
+        </div>
+        
+        <!-- Main Content Card -->
+        <div class="main-card">
+          <video id="avatarVideo" autoplay muted playsinline></video>
+          
+          <!-- Hero Image in Video Window -->
+          <div class="hero-image-overlay">
+            <img src="/hero-image.png" alt="Hero Image" class="hero-image">
+          </div>
+          
+          <!-- Loading Overlay -->
+          <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+              <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+              </div>
+              <div class="loading-text">Connecting Avatar...</div>
+              <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Logo Overlay -->
+          <div class="logo-overlay">
+            <img src="/dashboard-logo.png" alt="Company Logo" class="company-logo">
+          </div>
+          
+          <!-- Floating Controls -->
+          <div class="floating-controls" id="floatingControls">
+            <div class="floating-card">
+              <div class="language-section">
+                <select id="floatingLanguageSelect" class="language-select">
+                  <option value="en" selected>English</option>
+                  <option value="es">Spanish</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                  <option value="it">Italian</option>
+                  <option value="pt">Portuguese</option>
+                  <option value="nl">Dutch</option>
+                  <option value="sv">Swedish</option>
+                  <option value="no">Norwegian</option>
+                  <option value="da">Danish</option>
+                  <option value="fi">Finnish</option>
+                  <option value="pl">Polish</option>
+                  <option value="ru">Russian</option>
+                  <option value="ja">Japanese</option>
+                  <option value="ko">Korean</option>
+                  <option value="zh">Chinese</option>
+                  <option value="hi">Hindi</option>
+                  <option value="ar">Arabic</option>
+                  <option value="tr">Turkish</option>
+                  <option value="th">Thai</option>
+                  <option value="vi">Vietnamese</option>
+                  <option value="id">Indonesian</option>
+                  <option value="ms">Malay</option>
+                  <option value="tl">Filipino</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <button id="startBtn" class="chat-now-btn">
+                Chat now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
