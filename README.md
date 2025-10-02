@@ -1,146 +1,195 @@
-# Streaming Avatar Demo
+# HeyGen Video Agent - React App
 
-A modern web application demonstrating the HeyGen Streaming Avatar SDK integration with Vite and TypeScript.
+A modern React application for interacting with HeyGen's AI avatar using their streaming SDK.
 
 ## Features
 
-- 🎥 Real-time streaming avatar video
-- 🎤 Voice interaction with conversation logging
-- ⚙️ Configurable avatar settings (quality, language)
-- 📱 Responsive design with modern UI
-- 🔧 TypeScript support with full type safety
-- 🎨 Beautiful gradient UI with glassmorphism effects
+- 🤖 **AI Avatar Integration**: Real-time video streaming with HeyGen's AI avatar
+- 💬 **Chat Transcript**: Side-by-side chat interface with message bubbles
+- 🎤 **Microphone Control**: Mute/unmute functionality with visual feedback
+- 🎨 **Modern UI**: Clean, responsive design with smooth animations
+- ⚡ **React Icons**: Professional icon library integration
+- 📱 **Responsive**: Works on desktop and mobile devices
 
-## Prerequisites
+## Tech Stack
 
-- Node.js (version 16 or higher)
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **React Icons** for consistent iconography
+- **HeyGen Streaming Avatar SDK** for AI avatar functionality
+- **CSS3** with modern features (Flexbox, Grid, Animations)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+ 
 - npm or yarn
 - HeyGen API key
 
-## Installation
+### Installation
 
-1. Clone or download this project
-2. Install dependencies:
+1. **Clone and navigate to the React app:**
+   ```bash
+   cd video-agent-react
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. Set up your environment variables:
-   - Copy the `.env` file and add your HeyGen API key:
-   ```bash
+3. **Set up environment variables:**
+   Create a `.env` file in the root directory:
+   ```env
    VITE_HEYGEN_API_KEY=your_api_key_here
    ```
 
-## Usage
-
-1. Start the development server:
+4. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-2. Open your browser and navigate to the provided local URL (usually `http://localhost:5173`)
-
-3. Click "Start Avatar" to initialize the streaming avatar
-
-4. Use the controls to:
-   - Start/stop the avatar session
-   - Mute/unmute audio
-   - Change avatar quality and language settings
-   - View real-time conversation logs
-
-## Configuration
-
-### Avatar Settings
-
-- **Quality**: Choose between Low, Medium, and High quality settings
-- **Language**: Select from multiple supported languages (English, Spanish, French, German, etc.)
-- **Avatar**: Currently supports default avatar (can be extended with specific avatar IDs)
-
-### Environment Variables
-
-- `VITE_HEYGEN_API_KEY`: Your HeyGen API key (required)
+5. **Open your browser:**
+   Navigate to `http://localhost:3000`
 
 ## Project Structure
 
 ```
-streaming-avatar-demo/
+video-agent-react/
 ├── src/
-│   ├── main.ts          # Main application logic
-│   ├── style.css        # Styling and responsive design
-│   └── vite-env.d.ts    # TypeScript environment definitions
-├── index.html           # HTML template
+│   ├── App.tsx          # Main React component
+│   ├── App.css          # Styles (converted from vanilla CSS)
+│   ├── main.tsx         # React entry point
+│   └── index.css        # Base styles
+├── public/              # Static assets
 ├── .env                 # Environment variables
-├── package.json         # Dependencies and scripts
-└── tsconfig.json        # TypeScript configuration
+├── vite.config.ts       # Vite configuration
+└── package.json         # Dependencies and scripts
 ```
 
-## Key Features Implementation
+## Key Components
 
-### SDK Integration
-- Uses `@heygen/streaming-avatar` for avatar functionality
-- Implements proper error handling and connection management
-- Supports all major streaming events and callbacks
+### App.tsx
+The main React component that handles:
+- Avatar initialization and management
+- Chat transcript state
+- Microphone control
+- Message sending and receiving
+- UI state management
 
-### Event Handling
-- Real-time conversation logging
-- Avatar and user talking detection
-- Connection status monitoring
-- Error handling and user feedback
+### Features
 
-### UI/UX
-- Modern, responsive design
-- Real-time status updates
-- Interactive controls
-- Conversation history display
+#### 1. Avatar Integration
+- Uses HeyGen's StreamingAvatar SDK
+- Real-time video streaming
+- Voice chat capabilities
+- Event-driven communication
 
-## Security Notes
+#### 2. Chat Interface
+- Message bubbles with different styles for avatar/user/system
+- Real-time message updates
+- Auto-scrolling chat log
+- Message input with Enter key support
 
-⚠️ **Important**: The current implementation fetches access tokens directly from the frontend. For production use, it's recommended to:
+#### 3. Controls
+- **Transcript Toggle**: Show/hide chat panel
+- **Microphone Mute**: Toggle audio input
+- **Send Message**: Send text messages to avatar
 
-1. Move the `fetchAccessToken` function to a backend service
-2. Implement proper authentication and authorization
-3. Use secure token management practices
+#### 4. Responsive Design
+- 70% video width when transcript is hidden
+- 70% video + 25% transcript when visible
+- Mobile-friendly layout
+- Smooth animations and transitions
 
-## Troubleshooting
-
-### Common Issues
-
-1. **API Key Error**: Ensure your `.env` file contains a valid HeyGen API key
-2. **Connection Issues**: Check your internet connection and API key validity
-3. **Video Not Loading**: Ensure your browser supports the required video codecs
-4. **Audio Issues**: Check browser permissions for microphone access
-
-### Browser Compatibility
-
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
-
-## Development
-
-### Available Scripts
+## Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
-### Building for Production
+## Environment Variables
 
-```bash
-npm run build
-```
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_HEYGEN_API_KEY` | Your HeyGen API key | Yes |
 
-The built files will be in the `dist` directory.
+## API Integration
+
+The app integrates with HeyGen's API for:
+- Token generation
+- Avatar session creation
+- Voice chat functionality
+- Real-time streaming
+
+## Styling
+
+The app uses modern CSS features:
+- CSS Custom Properties (variables)
+- Flexbox for layout
+- CSS Grid for complex layouts
+- Smooth transitions and animations
+- Responsive design patterns
+
+## Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## Development
+
+### Adding New Features
+
+1. **New Components**: Create in `src/components/`
+2. **Styling**: Add to `App.css` or create component-specific CSS
+3. **State Management**: Use React hooks (useState, useEffect)
+4. **API Integration**: Add to the appropriate service functions
+
+### Code Style
+
+- TypeScript for type safety
+- Functional components with hooks
+- Consistent naming conventions
+- Proper error handling
+- Clean, readable code
+
+## Troubleshooting
+
+### Common Issues
+
+1. **API Key Not Working**
+   - Check your `.env` file
+   - Ensure the key is valid and has proper permissions
+
+2. **Avatar Not Loading**
+   - Check browser console for errors
+   - Verify network connection
+   - Check API key validity
+
+3. **Microphone Issues**
+   - Grant microphone permissions
+   - Check browser compatibility
+   - Try refreshing the page
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## License
 
-This project is for demonstration purposes. Please ensure you comply with HeyGen's terms of service when using their API.
+This project is licensed under the MIT License.
 
 ## Support
 
-For issues related to:
-- This demo application: Check the troubleshooting section above
-- HeyGen API: Refer to the official HeyGen documentation
-- Vite/TypeScript: Check the respective documentation
+For issues and questions:
+- Check the browser console for errors
+- Review the HeyGen SDK documentation
+- Open an issue in the repository

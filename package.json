@@ -1,5 +1,5 @@
 {
-  "name": "streaming-avatar-demo",
+  "name": "video-agent-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,14 @@
   },
   "devDependencies": {
     "typescript": "~5.8.3",
-    "vite": "^7.1.6"
+    "vite": "^7.1.7"
   },
   "dependencies": {
     "@heygen/streaming-avatar": "^2.1.0",
-    "livekit-client": "^2.15.7"
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0"
   }
 }
